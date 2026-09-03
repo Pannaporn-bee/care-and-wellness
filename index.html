@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Care & Wellness</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,"Noto Sans Thai",sans-serif;
+}
+
+body{
+    background:#f4faf7;
+    color:#263b35;
+    line-height:1.6;
+}
+
+header{
+    background:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#238b68;
+}
+
+nav a{
+    text-decoration:none;
+    color:#40544e;
+    margin-left:22px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#238b68;
+}
+
+.hero{
+    padding:80px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:48px;
+    color:#238b68;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#60736d;
+}
+
+.hero-box{
+    background:#dff5eb;
+    width:320px;
+    height:280px;
+    border-radius:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+    box-shadow:0 15px 35px rgba(35,139,104,.15);
+}
+
+section{
+    padding:65px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.section-title h2{
+    color:#238b68;
+    font-size:32px;
+}
+
+.section-title p{
+    color:#71827d;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+}
+
+.card{
+    background:white;
+    padding:25px 18px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#238b68;
+    margin-bottom:7px;
+}
+
+.card p{
+    color:#687973;
+    font-size:14px;
+}
+
+.chat-section{
+    background:#e7f7f0;
+}
+
+.chat{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.chat-header{
+    background:#238b68;
+    color:white;
+    padding:20px;
+}
+
+.chat-header h3{
+    font-size:21px;
+}
+
+.messages{
+    height:300px;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.message{
+    padding:12px 15px;
+    border-radius:16px;
+    margin-bottom:12px;
+    max-width:85%;
+}
+
+.bot{
+    background:#edf5f2;
+    margin-right:auto;
+}
+
+.user{
+    background:#238b68;
+    color:white;
+    margin-left:auto;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+    padding:15px;
+    border-top:1px solid #eee;
+}
+
+.chat-input input{
+    flex:1;
+    padding:13px 15px;
+    border:1px solid #d4dfdb;
+    border-radius:12px;
+    outline:none;
+    font-size:15px;
+}
+
+.chat-input button{
+    border:none;
+    background:#238b68;
+    color:white;
+    padding:0 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.info{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.info ul{
+    padding-left:25px;
+}
+
+.info li{
+    margin:8px 0;
+}
+
+.warning{
+    margin-top:20px;
+    background:#fff6df;
+    padding:15px;
+    border-radius:12px;
+    color:#765b1b;
+    font-size:14px;
+}
+
+footer{
+    background:#203b33;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer p{
+    opacity:.85;
+    font-size:14px;
+}
+
+@media(max-width:900px){
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav a{
+        margin-left:8px;
+        font-size:13px;
+    }
+}
+
+@media(max-width:550px){
+    header{
+        padding:15px;
+    }
+
+    nav a{
+        margin-left:5px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding:55px 20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero-box{
+        width:230px;
+        height:200px;
+        font-size:70px;
+    }
+
+    section{
+        padding:45px 20px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌿 Care & Wellness</div>
+    <nav>
+        <a href="#home">หน้าหลัก</a>
+        <a href="#health">สุขภาพ</a>
+        <a href="#chat">ถามสุขภาพ</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Care & Wellness</h1>
+        <h2>ดูแลสุขภาพ เริ่มต้นได้ที่ตัวเรา 💚</h2>
+        <p>
+            เว็บไซต์ให้ความรู้เกี่ยวกับการดูแลสุขภาพเบื้องต้น
+            เพื่อช่วยให้ทุกคนเข้าใจและใส่ใจสุขภาพกายและสุขภาพจิต
+            ได้ง่ายขึ้นในชีวิตประจำวัน
+        </p>
+    </div>
+
+    <div class="hero-box">🌱</div>
+</section>
+
+<section id="health">
+    <div class="section-title">
+        <h2>ความรู้สุขภาพเบื้องต้น</h2>
+        <p>เรื่องง่าย ๆ ที่ควรรู้เพื่อดูแลตัวเอง</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🥗</div>
+            <h3>โภชนาการ</h3>
+            <p>เลือกรับประทานอาหารให้หลากหลายและเหมาะสมกับร่างกาย</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏃</div>
+            <h3>ออกกำลังกาย</h3>
+            <p>เคลื่อนไหวร่างกายอย่างสม่ำเสมอและเหมาะสมกับวัย</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">😴</div>
+            <h3>การนอนหลับ</h3>
+            <p>ให้ความสำคัญกับการพักผ่อนและสร้างเวลานอนที่เหมาะสม</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h3>สุขภาพจิต</h3>
+            <p>รู้จักสังเกตอารมณ์ของตนเองและหาเวลาผ่อนคลาย</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💧</div>
+            <h3>การดื่มน้ำ</h3>
+            <p>ดื่มน้ำให้เพียงพอตามความต้องการของร่างกาย</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="chat-section" id="chat">
+
+    <div class="section-title">
+        <h2>💬 Care AI</h2>
+        <p>ถามคำถามเกี่ยวกับสุขภาพเบื้องต้นได้ที่นี่</p>
+    </div>
+
+    <div class="chat">
+
+        <div class="chat-header">
+            <h3>🌿 Care AI Assistant</h3>
+            <p>ผู้ช่วยให้ข้อมูลสุขภาพเบื้องต้น</p>
+        </div>
+
+        <div class="messages" id="messages">
+            <div class="message bot">
+                สวัสดีค่ะ 👋 ฉันคือ Care AI<br>
+                สามารถถามเกี่ยวกับการนอน อาหาร การออกกำลังกาย
+                การดื่มน้ำ หรือสุขภาพจิตเบื้องต้นได้เลยค่ะ
+            </div>
+        </div>
+
+        <div class="chat-input">
+            <input
+                type="text"
+                id="userInput"
+                placeholder="พิมพ์คำถาม เช่น นอนไม่พอควรทำอย่างไร?"
+                onkeydown="if(event.key==='Enter') sendMessage()"
+            >
+            <button onclick="sendMessage()">ส่ง</button>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="section-title">
+        <h2>🌱 หลักการดูแลสุขภาพ</h2>
+        <p>เริ่มจากสิ่งเล็ก ๆ ในชีวิตประจำวัน</p>
+    </div>
+
+    <div class="info">
+        <ul>
+            <li>รับประทานอาหารที่หลากหลายและมีประโยชน์</li>
+            <li>เคลื่อนไหวร่างกายและออกกำลังกายอย่างเหมาะสม</li>
+            <li>นอนหลับและพักผ่อนให้เพียงพอ</li>
+            <li>ดื่มน้ำอย่างเหมาะสม</li>
+            <li>ดูแลอารมณ์และจัดการความเครียด</li>
+            <li>หากมีอาการผิดปกติหรืออาการรุนแรง ควรปรึกษาผู้ปกครองหรือบุคลากรทางการแพทย์</li>
+        </ul>
+
+        <div class="warning">
+            ⚠️ Care AI ให้ข้อมูลเพื่อการศึกษาและสุขภาพเบื้องต้น
+            ไม่สามารถใช้แทนการวินิจฉัยหรือการรักษาจากแพทย์ได้
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h3>🌿 Care & Wellness</h3>
+    <p>เว็บไซต์ส่งเสริมความรู้และการดูแลสุขภาพเบื้องต้น</p>
+    <p>© 2026 Care & Wellness Project</p>
+</footer>
+
+<script>
+
+function sendMessage(){
+
+    const input = document.getElementById("userInput");
+    const messages = document.getElementById("messages");
+
+    const question = input.value.trim();
+
+    if(question === "") return;
+
+    const userMessage = document.createElement("div");
+    userMessage.className = "message user";
+    userMessage.textContent = question;
+
+    messages.appendChild(userMessage);
+
+    input.value = "";
+
+    setTimeout(function(){
+
+        let answer = getAnswer(question);
+
+        const botMessage = document.createElement("div");
+        botMessage.className = "message bot";
+        botMessage.innerHTML = answer;
+
+        messages.appendChild(botMessage);
+
+        messages.scrollTop = messages.scrollHeight;
+
+    },500);
+
+    messages.scrollTop = messages.scrollHeight;
+}
+
+
+function getAnswer(question){
+
+    const q = question.toLowerCase();
+
+    if(q.includes("นอน") || q.includes("นอนไม่พอ") || q.includes("นอนไม่หลับ")){
+        return "😴 หากนอนไม่พอ ลองจัดเวลานอนให้สม่ำเสมอ ลดการใช้หน้าจอก่อนนอน และจัดห้องให้เหมาะกับการพักผ่อน หากปัญหานอนหลับเกิดขึ้นต่อเนื่อง ควรปรึกษาผู้ปกครองหรือบุคลากรทางการแพทย์ค่ะ";
+    }
+
+    if(q.includes("อาหาร") || q.includes("กิน") || q.includes("โภชนาการ")){
+        return "🥗 ควรรับประทานอาหารให้หลากหลายและครบหมู่ เลือกอาหารที่มีคุณค่าทางโภชนาการ และรับประทานในปริมาณที่เหมาะสมค่ะ";
+    }
+
+    if(q.includes("ออกกำลัง") || q.includes("ออกกำลังกาย") || q.includes("กีฬา")){
+        return "🏃 การออกกำลังกายช่วยส่งเสริมสุขภาพกายและจิตใจ ควรเลือกกิจกรรมที่เหมาะกับวัยและสภาพร่างกาย และเริ่มจากระดับที่ทำได้อย่างปลอดภัยค่ะ";
+    }
+
+    if(q.includes("น้ำ") || q.includes("ดื่มน้ำ")){
+        return "💧 การดื่มน้ำช่วยให้ร่างกายทำงานได้ตามปกติ ควรดื่มน้ำสม่ำเสมอตลอดวัน และเพิ่มความใส่ใจเมื่ออากาศร้อนหรือมีกิจกรรมที่ทำให้เสียเหงื่อค่ะ";
+    }
+
+    if(q.includes("เครียด") || q.includes("เศร้า") || q.includes("สุขภาพจิต")){
+        return "🧠 หากรู้สึกเครียด ลองพักจากสิ่งที่กดดัน ทำกิจกรรมที่ช่วยผ่อนคลาย และพูดคุยกับคนที่ไว้ใจ หากความรู้สึกหนักมากหรือรบกวนชีวิตประจำวัน ควรขอความช่วยเหลือจากผู้ใหญ่ที่ไว้ใจหรือผู้เชี่ยวชาญค่ะ";
+    }
+
+    if(q.includes("ปวดหัว") || q.includes("เวียนหัว") || q.includes("มึนหัว")){
+        return "💚 อาการเหล่านี้อาจเกิดได้จากหลายสาเหตุ เช่น พักผ่อนไม่พอ ดื่มน้ำน้อย หรือปัจจัยอื่น ๆ ลองพักผ่อนและดูแลตัวเองเบื้องต้น หากอาการรุนแรง เกิดบ่อย หรือไม่ดีขึ้น ควรแจ้งผู้ปกครองและพบแพทย์ค่ะ";
+    }
+
+    if(q.includes("สวัสดี") || q.includes("hello") || q.includes("hi")){
+        return "🌿 สวัสดีค่ะ! Care AI พร้อมให้ข้อมูลสุขภาพเบื้องต้น สามารถถามฉันเกี่ยวกับอาหาร การนอน การออกกำลังกาย การดื่มน้ำ หรือสุขภาพจิตได้เลยค่ะ";
+    }
+
+    return "🌿 ขอบคุณสำหรับคำถามค่ะ ตอนนี้ Care AI สามารถให้ข้อมูลเบื้องต้นเกี่ยวกับอาหาร การออกกำลังกาย การนอน การดื่มน้ำ และสุขภาพจิตได้ หากเป็นอาการเจ็บป่วยหรืออาการรุนแรง ควรปรึกษาผู้ปกครองหรือบุคลากรทางการแพทย์ค่ะ";
+}
+
+</script>
+
+</body>
+</html>
